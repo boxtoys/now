@@ -1,0 +1,3 @@
+#!/bin/bash
+
+npx -y zx --quiet https://now.box.toys/shell/node.part.mjs
