@@ -10,11 +10,11 @@ Use the following script to quickly create a **Node** or **Node Library** projec
 
 
 ```bash
-/bin/bash -c "$(curl -fsSL http://https://now.box.toys/node)"
+/bin/bash -c "$(curl -fsSL https://now.box.toys/node)"
 ```
 
 ```bash
-/bin/bash -c "$(curl -fsSL http://https://now.box.toys/node.part)"
+/bin/bash -c "$(curl -fsSL https://now.box.toys/node.part)"
 ```
 
 ## License
