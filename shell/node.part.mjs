@@ -48,7 +48,7 @@ async function generateFiles(projectName) {
       await cp('.commitlintrc')
       await cp('.cz-config.cjs')
       await cp('.eslintrc.js')
-      await cp('.gitignore')
+      await cp('_gitignore')
       await cp('.lintstagedrc')
       await cp('.npmignore')
       await cp('.prettierrc')
