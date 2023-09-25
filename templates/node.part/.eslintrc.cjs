@@ -27,7 +27,8 @@ module.exports = {
   "ignorePatterns": [
     "/*.js",
     "/*.json",
-    "**/dist/**"
+    "**/dist/**",
+    "**/types/**"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
