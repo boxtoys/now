@@ -45,12 +45,13 @@ async function generateFiles(projectName) {
       await cp('.cz-config.js')
       await cp('.czrc')
       await cp('.eslintrc.js')
-      await cp('.gitignore')
+      await cp('_gitignore')
       await cp('.lintstagedrc')
       await cp('.prettierrc')
       await cp('package.json')
       await cp('tsconfig.json')
 
+      await $`mv _gitignore .gitignore`
       await $`git init`
     })
   })

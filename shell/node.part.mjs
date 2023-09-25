@@ -58,6 +58,7 @@ async function generateFiles(projectName) {
       await cp('rollup.config.mjs')
       await cp('tsconfig.json')
 
+      await $`mv _gitignore .gitignore`
       await $`git init`
     })
   })
