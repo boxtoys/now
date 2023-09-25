@@ -66,7 +66,7 @@ async function printSuccessMessage(projectName) {
   echo``
   echo`  cd ${projectName}`
   echo`  npm i`
-  echo`  npm run dev`
+  echo`  npm start`
   echo``
 }
 
