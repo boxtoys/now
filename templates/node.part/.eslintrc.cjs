@@ -28,6 +28,7 @@ module.exports = {
     "/*.js",
     "/*.json",
     "**/dist/**",
+    "**/test/**",
     "**/types/**"
   ],
   "parser": "@typescript-eslint/parser",
