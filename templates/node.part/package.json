@@ -52,5 +52,13 @@
       "import": "./dist/index.esm.mjs",
       "require": "./dist/index.cjs.js"
     }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
   }
 }
