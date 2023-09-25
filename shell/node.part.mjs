@@ -56,7 +56,7 @@ async function generateFiles(projectName) {
       await cp('babel.config.json')
       await cp('jest.config.json')
       await cp('package.json')
-      await cp('rollup.config.js')
+      await cp('rollup.config.mjs')
       await cp('tsconfig.json')
 
       await $`git init`
