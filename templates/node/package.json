@@ -1,25 +1,26 @@
 {
   "version": "1.0.0",
   "description": "",
-  "dependencies": {},
   "devDependencies": {
-    "typescript": "4.8.4",
-    "husky": "8.0.1",
-    "lint-staged": "13.0.3",
-    "prettier": "2.7.1",
-    "eslint": "8.26.0",
-    "@typescript-eslint/parser": "5.42.0",
-    "@typescript-eslint/eslint-plugin": "5.42.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-config-prettier": "8.5.0",
-    "commitizen": "4.2.5",
-    "cz-customizable": "7.0.0",
-    "@commitlint/cli": "17.2.0",
-    "@commitlint/config-conventional": "17.2.0"
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "commitizen": "^4.3.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2"
   },
   "scripts": {
     "prepare": "husky install",
     "commit": "npx git-cz",
-    "build": "npx tsc --outDir ./dist"
+    "build": "npx tsc --outDir ./dist",
+    "start": "npx tsx ./src/index.ts"
   }
 }
