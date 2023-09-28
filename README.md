@@ -2,6 +2,12 @@
 
 Quick start project.
 
+## Features
+
+- Support for popular technology stacks.
+- Configuration presets based on best practice.
+- Support for VSCode Profiles Configuration. Import `.vscode/profiles.code-profile` and you're done!
+
 ## Usage
 
 ### Node
