@@ -1,0 +1,26 @@
+{
+  "name": "now",
+  "version": "1.0.0",
+  "description": "Quick start project.",
+  "scripts": {
+    "dev": "npx zx ./build.mjs --env development && npx serve",
+    "build": "npx zx ./build.mjs --env production",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boxtoys/now.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boxtoys/now/issues"
+  },
+  "homepage": "https://github.com/boxtoys/now#readme",
+  "dependencies": {
+    "zx": "^7.2.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "serve": "^14.2.1",
+    "husky": "^8.0.0"
+  }
+}

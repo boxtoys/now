@@ -1,0 +1,13 @@
+favicons
+node_modules
+templates
+.env
+.git
+.gitignore
+README.md
+favicon.ico
+index.html
+LICENSE
+package-lock.json
+package.json
+build.mjs
