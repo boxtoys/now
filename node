@@ -20,4 +20,4 @@ then
 fi
 
 # execute generated script
-npx -y zx --quiet https://now.box.toys/shell/node.mjs
+npx -y zx --quiet http://localhost:3000/shell/node.mjs

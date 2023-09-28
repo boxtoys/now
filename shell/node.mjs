@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-const HOST = 'https://now.box.toys'
+const HOST = 'http://localhost:3000'
 const BASE_URL = `${HOST}/templates/node`
 
 getProjectName()
@@ -37,6 +37,9 @@ async function generateFiles(projectName) {
       await mkdir('.husky')
       await cp('.husky/pre-commit')
       await cp('.husky/commit-msg')
+
+      await mkdir('.vscode')
+      await cp('.vscode/profiles.code-profile')
 
       await mkdir('src')
       await cp('src/index.ts')

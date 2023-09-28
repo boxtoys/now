@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv'
 
 const exclude = fs.readFileSync('.buildignore').toString().split('\n').filter((line) => line !== '')
 const env = dotenv.parse(await fs.readFile(`.env`, 'utf8'))
-const files = getAllFilePaths(__dirname)
+const files = getAllFilePaths(process.cwd())
 
 if (argv.env === 'development') {
   for (const file of files) {
