@@ -20,6 +20,9 @@ if (argv.env === 'production') {
     const result = content.replace(new RegExp(env.DEVELOPMENT_HOST, 'g'), env.PRODUCTION_HOST)
     await fs.writeFile(file, result, 'utf8')
   }
+
+  await $`git add .`
+  await $`git commit --no-verify -m "build: change HOST"`
 }
 
 function getAllFilePaths(dirPath) {
