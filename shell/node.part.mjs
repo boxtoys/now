@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-const HOST = 'https://now.box.toys'
+const HOST = 'http://localhost:3000'
 const BASE_URL = `${HOST}/templates/node.part`
 
 getProjectName()
