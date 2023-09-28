@@ -21,8 +21,12 @@ if (argv.env === 'production') {
     await fs.writeFile(file, result, 'utf8')
   }
 
-  await $`git add .`
-  await $`git commit --no-verify -m "build: change HOST"`
+  // const isChanged = await $`git diff`.quiet()
+
+  // if (isChanged.stdout.trim() !== '') {
+    await $`git add .`
+    // await $`git commit --no-verify -m "build: change HOST"`
+  // }
 }
 
 function getAllFilePaths(dirPath) {
