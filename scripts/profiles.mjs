@@ -2,6 +2,22 @@
 
 const profiles = {
   name: 'Node',
+  settings: JSON.stringify({
+    settings: JSON.stringify({
+      "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[jsonc]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+      },
+      "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    })
+  }),
   extensions: [{
     displayName: 'Prettier - Code formatter',
     identifier: {
