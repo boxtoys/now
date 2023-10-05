@@ -23,6 +23,14 @@ Use the following script to quickly create a **Node** or **Node Library** projec
 /bin/bash -c "$(curl -fsSL https://now.box.toys/node.part)"
 ```
 
+### Vue
+
+Use the following script to quickly create a **Vue** project.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://now.box.toys/vue)"
+```
+
 ## How to use VSCode Profiles Configuration
 
 1. Copy `.vscode/profiles.code-profile` file path.

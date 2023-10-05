@@ -1,5 +1,7 @@
 favicons
 node_modules
+scripts
+shell
 templates
 .env
 .git
@@ -10,4 +12,3 @@ index.html
 LICENSE
 package-lock.json
 package.json
-build.mjs

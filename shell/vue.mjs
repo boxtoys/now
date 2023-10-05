@@ -1,13 +1,13 @@
 #!/usr/bin/env zx
 
 const HOST = 'http://localhost:3000'
-const BASE_URL = `${HOST}/templates/node`
+const BASE_URL = `${HOST}/templates/vue`
 
 getProjectName()
-  .then(checkDirectoryExists)
-  .then(generateFiles)
-  .then(printSuccessMessage)
-  .catch(reason => echo(reason))
+.then(checkDirectoryExists)
+.then(generateFiles)
+.then(printSuccessMessage)
+.catch(reason => echo(reason))
 
 async function getProjectName() {
   const result = await question('Project name: ')
@@ -30,10 +30,12 @@ async function checkDirectoryExists(projectName) {
 async function generateFiles(projectName) {
   await mkdir(projectName)
 
-  await within(async () => {
-    await cd(projectName)
+  await spinner('Generating files...', async () => {
+    await $`npm create vite@latest ${projectName} -- --template vue-ts`
 
-    await spinner('Generated files...', async () => {
+    await within(async () => {
+      await cd(projectName)
+
       await mkdir('.husky')
       await cp('.husky/pre-commit')
       await cp('.husky/commit-msg')
@@ -41,20 +43,35 @@ async function generateFiles(projectName) {
       await mkdir('.vscode')
       await cp('.vscode/profiles.code-profile')
 
-      await mkdir('src')
-      await cp('src/index.ts')
-
+      await cp('.browserslistrc')
       await cp('.commitlintrc')
       await cp('.cz-config.js')
+      await cp('.eslintrc.cjs')
       await cp('.czrc')
-      await cp('.eslintrc.js')
       await cp('_gitignore')
       await cp('.lintstagedrc')
       await cp('.prettierrc')
+      await cp('.env.development')
+      await cp('.env.production')
+      await cp('vite.config.ts')
       await cp('package.json')
-      await cp('tsconfig.json')
+      await cp('index._html')
 
+      await mkdir('src/pages')
+      await mkdir('src/router')
+      await cp('src/main.ts')
+      await cp('src/App.vue')
+      await cp('src/pages/home.vue')
+      await cp('src/router/index.ts')
+      await cp('src/vite-env.d.ts')
+
+      await $`rm README.md`
+      await $`rm public/vite.svg`
+      await $`rm src/style.css`
+      await $`rm -rf src/assets`
+      await $`rm -rf src/components`
       await $`mv _gitignore .gitignore`
+      await $`mv index._html index.html`
       await $`git init`
     })
   })

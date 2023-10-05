@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5",
+    "sass": "^1.68.0",
+    "vue-tsc": "^1.8.5",
+    "@types/node": "^20.8.2",
+    "@commitlint/cli": "^17.7.1",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "commitizen": "^4.3.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "eslint-plugin-vue": "^9.17.0"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "commit": "npx git-cz",
+    "preview": "vite preview",
+    "build": "vue-tsc && vite build",
+    "start": "vite"
+  }
+}
