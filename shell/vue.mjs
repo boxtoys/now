@@ -67,6 +67,7 @@ async function generateFiles(projectName) {
 
       await $`rm README.md`
       await $`rm public/vite.svg`
+      await $`rm .vscode/extensions.json`
       await $`rm src/style.css`
       await $`rm -rf src/assets`
       await $`rm -rf src/components`

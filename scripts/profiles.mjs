@@ -15,6 +15,9 @@ const profiles = {
       },
       "[typescript]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
       }
     })
   }),
@@ -29,6 +32,30 @@ const profiles = {
     identifier: {
       id: 'yoavbls.pretty-ts-errors',
       uuid: '1e149c89-8f97-447e-863d-1146f0ad1b70'
+    }
+  }, {
+    displayName: 'ESLint',
+    identifier: {
+      id: 'dbaeumer.vscode-eslint',
+      uuid: '583b2b34-2c1e-4634-8c0b-0b82e283ea3a'
+    }
+  }, {
+    displayName: 'DotENV',
+    identifier: {
+      id: 'mikestead.dotenv',
+      uuid: '532533c9-a894-4a58-9eee-bbfbe7c06f71'
+    }
+  }, {
+    displayName: 'Vue Language Features (Volar)',
+    identifier: {
+      id: 'vue.volar',
+      uuid: 'a5223b43-8621-4351-a14e-3d560f85f277'
+    }
+  }, {
+    displayName: 'TypeScript Vue Plugin (Volar)',
+    identifier: {
+      id: 'vue.vscode-typescript-vue-plugin',
+      uuid: '78d16c76-388b-44e4-8470-6790d6c3d2d1'
     }
   }]
 }
