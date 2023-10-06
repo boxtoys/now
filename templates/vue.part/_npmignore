@@ -23,4 +23,12 @@ vitest.config.ts
 jest.config.json
 
 # -- ts config --
+tsconfig.json
+tsconfig.node.json
 tsconfig.types.json
+
+# -- Misc config --
+.browserslistrc
+.vscode
+src/vite-env.d.ts
+index.html

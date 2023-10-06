@@ -14,7 +14,7 @@
 .prettierrc
 
 # -- Build config --
-rollup.config.js
+rollup.config.mjs
 babel.config.json
 
 # -- test config --
@@ -24,3 +24,9 @@ jest.config.json
 
 # -- ts config --
 tsconfig.json
+
+
+# -- Misc config --
+.browserslistrc
+.cz-config.cjs
+.vscode
