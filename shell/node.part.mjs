@@ -48,12 +48,12 @@ async function generateFiles(projectName) {
       await cp('test/hello.test.ts')
 
       await cp('_gitignore')
+      await cp('_npmignore')
       await cp('.browserslistrc')
       await cp('.commitlintrc')
       await cp('.cz-config.cjs')
       await cp('.eslintrc.cjs')
       await cp('.lintstagedrc')
-      await cp('.npmignore')
       await cp('.prettierrc')
       await cp('babel.config.json')
       await cp('jest.config.json')
@@ -62,6 +62,7 @@ async function generateFiles(projectName) {
       await cp('tsconfig.json')
 
       await $`mv _gitignore .gitignore`
+      await $`mv _npmignore .npmignore`
       await $`git init`
     })
   })

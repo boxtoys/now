@@ -29,7 +29,9 @@ module.exports = {
     "/*.json",
     "**/dist/**",
     "**/test/**",
-    "**/types/**"
+    "**/types/**",
+    ".eslintrc.cjs",
+    "rollup.config.mjs",
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
