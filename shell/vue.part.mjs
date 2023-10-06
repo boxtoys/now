@@ -59,6 +59,7 @@ async function generateFiles(projectName) {
       await cp('test/hello.test.ts')
 
       await cp('_gitignore')
+      await cp('_npmignore')
       await cp('.browserslistrc')
       await cp('.commitlintrc')
       await cp('.cz-config.js')
@@ -72,8 +73,8 @@ async function generateFiles(projectName) {
       await cp('vitest.config.ts')
 
       await $`rm README.md`
-      await $`rm index.html`
       await $`mv _gitignore .gitignore`
+      await $`mv _npmignore .npmignore`
       await $`git init`
     })
   })

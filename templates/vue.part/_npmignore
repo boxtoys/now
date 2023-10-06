@@ -14,8 +14,8 @@
 .prettierrc
 
 # -- Build config --
-rollup.config.js
-babel.config.json
+vite.config.ts
+vitest.config.ts
 
 # -- test config --
 /test
@@ -23,4 +23,4 @@ babel.config.json
 jest.config.json
 
 # -- ts config --
-tsconfig.json
+tsconfig.types.json

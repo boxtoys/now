@@ -35,7 +35,7 @@
     "commit": "npx git-cz",
     "build": "vite build && npm run build:types",
     "build:types": "vue-tsc --project tsconfig.types.json --declaration --emitDeclarationOnly --outDir types",
-    "start": "vite",
+    "start": "vite --host",
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
   },
