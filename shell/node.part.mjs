@@ -47,11 +47,11 @@ async function generateFiles(projectName) {
       await mkdir('test')
       await cp('test/hello.test.ts')
 
+      await cp('_gitignore')
       await cp('.browserslistrc')
       await cp('.commitlintrc')
       await cp('.cz-config.cjs')
       await cp('.eslintrc.cjs')
-      await cp('_gitignore')
       await cp('.lintstagedrc')
       await cp('.npmignore')
       await cp('.prettierrc')
