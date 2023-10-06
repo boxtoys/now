@@ -1,6 +1,7 @@
 {
+  "name": "package_name",
   "version": "1.0.0",
-  "description": "",
+  "description": "package_description",
   "dependencies": {
     "@babel/runtime": "^7.22.15",
     "@babel/runtime-corejs3": "^7.22.15"
