@@ -30,7 +30,7 @@
   "scripts": {
     "prepare": "husky install",
     "commit": "npx git-cz",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "build": "vue-tsc && vite build",
     "start": "vite --host"
   }

@@ -18,9 +18,9 @@
 </template>
 
 <script setup lang="ts">
-  function buttonClick() {
-    alert('oops.')
-  }
+function buttonClick() {
+  alert('oops.')
+}
 </script>
 <script lang="ts">
 export default {

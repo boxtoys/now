@@ -7,8 +7,8 @@ import { RouterView } from 'vue-router'
 </template>
 
 <style>
-  h1 {
-    color: cadetblue;
-    font-size: 60px;
-  }
+h1 {
+  color: cadetblue;
+  font-size: 60px;
+}
 </style>

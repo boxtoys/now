@@ -57,6 +57,18 @@ const profiles = {
       id: 'vue.vscode-typescript-vue-plugin',
       uuid: '78d16c76-388b-44e4-8470-6790d6c3d2d1'
     }
+  }, {
+    displayName: 'GitLens — Git supercharged',
+    identifier: {
+      id: 'eamodio.gitlens',
+      uuid: '4de763bd-505d-4978-9575-2b7696ecf94e'
+    }
+  }, {
+    displayName: 'i18n Ally',
+    identifier: {
+      id: 'lokalise.i18n-ally',
+      uuid: '8ab81d13-c812-4a2f-8f19-c32e3655e53c'
+    }
   }]
 }
 
