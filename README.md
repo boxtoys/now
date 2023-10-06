@@ -16,19 +16,23 @@ Use the following script to quickly create a **Node** or **Node Library** projec
 
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://now.box.toys/node)"
+/bin/bash -c "$(curl -fsSL https://now.box.toys/bin/node)"
 ```
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://now.box.toys/node.part)"
+/bin/bash -c "$(curl -fsSL https://now.box.toys/bin/node.part)"
 ```
 
 ### Vue
 
-Use the following script to quickly create a **Vue** project.
+Use the following script to quickly create a **Vue** or **Vue Library** project.
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://now.box.toys/vue)"
+/bin/bash -c "$(curl -fsSL https://now.box.toys/bin/vue)"
+```
+
+```bash
+/bin/bash -c "$(curl -fsSL https://now.box.toys/bin/vue.part)"
 ```
 
 ## How to use VSCode Profiles Configuration
