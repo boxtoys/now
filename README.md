@@ -8,6 +8,13 @@ Quick start project.
 - Configuration presets based on best practice.
 - Support for VSCode Profiles Configuration. Import `.vscode/profiles.code-profile` and you're done!
 
+## Templates
+
+| Template Type | Usage                                       |
+| ------------- | ------------------------------------------- |
+| Node          | [Link](https://github.com/boxtoys/now#node) |
+| Vue           | [Link](https://github.com/boxtoys/now#vue)  |
+
 ## Usage
 
 ### Node
