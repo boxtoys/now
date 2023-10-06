@@ -1,5 +1,3 @@
 import TButton from './button.vue'
 
-export {
-  TButton
-}
+export default TButton

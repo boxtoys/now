@@ -44,6 +44,9 @@ async function generateFiles(projectName) {
       await $`rm .vscode/extensions.json`
       await cp('.vscode/profiles.code-profile')
 
+      await mkdir('example')
+      await cp('example/main.ts')
+
       await $`rm public/vite.svg`
 
       await cp('src/index.ts')
@@ -67,6 +70,7 @@ async function generateFiles(projectName) {
       await cp('.eslintrc.cjs')
       await cp('.lintstagedrc')
       await cp('.prettierrc')
+      await cp('index._html')
       await cp('package.json')
       await cp('tsconfig.types.json')
       await cp('vite.config.ts')
@@ -75,6 +79,7 @@ async function generateFiles(projectName) {
       await $`rm README.md`
       await $`mv _gitignore .gitignore`
       await $`mv _npmignore .npmignore`
+      await $`mv index._html index.html`
       await $`git init`
     })
   })
