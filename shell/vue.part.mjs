@@ -41,18 +41,24 @@ async function generateFiles(projectName) {
       await cp('.husky/commit-msg')
 
       await mkdir('.vscode')
+      await $`rm .vscode/extensions.json`
       await cp('.vscode/profiles.code-profile')
+
+      await $`rm public/vite.svg`
 
       await cp('src/index.ts')
       await cp('src/button.vue')
       await cp('src/vite-env.d.ts')
+      await $`rm src/App.vue`
+      await $`rm src/main.ts`
+      await $`rm src/style.css`
+      await $`rm -rf src/assets`
+      await $`rm -rf src/components`
 
       await mkdir('test')
       await cp('test/hello.test.ts')
 
       await cp('_gitignore')
-      await $`mv _gitignore .gitignore`
-
       await cp('.browserslistrc')
       await cp('.commitlintrc')
       await cp('.cz-config.js')
@@ -61,20 +67,13 @@ async function generateFiles(projectName) {
       await cp('.lintstagedrc')
       await cp('.prettierrc')
       await cp('package.json')
-      await cp('vite.config.ts')
       await cp('tsconfig.types.json')
+      await cp('vite.config.ts')
       await cp('vitest.config.ts')
 
       await $`rm README.md`
       await $`rm index.html`
-      await $`rm public/vite.svg`
-      await $`rm .vscode/extensions.json`
-      await $`rm src/App.vue`
-      await $`rm src/main.ts`
-      await $`rm src/style.css`
-      await $`rm -rf src/assets`
-      await $`rm -rf src/components`
-      
+      await $`mv _gitignore .gitignore`
       await $`git init`
     })
   })
