@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-const HOST = 'http://localhost:3000'
+const HOST = 'https://now.box.toys'
 const BASE_URL = `${HOST}/templates/vue`
 
 getProjectName()
