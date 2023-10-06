@@ -1,6 +1,7 @@
 {
+  "name": "package_name",
   "version": "1.0.0",
-  "description": "",
+  "description": "package_description",
   "dependencies": {
     "vue": "^3.3.4"
   },
