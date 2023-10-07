@@ -56,7 +56,7 @@ async function generateFiles(projectName) {
       await cp('.lintstagedrc')
       await cp('.prettierrc')
 
-      await mergePackageJson({
+      mergePackageJson({
         devDependencies: {
           "husky": "^8.0.3",
           "prettier": "^3.0.3",
@@ -107,8 +107,8 @@ async function cp(fileName) {
   await $`touch ${fileName} && chmod +x ${fileName} && curl -s ${BASE_URL}/${fileName} > ${fileName}`
 }
 
-async function mergePackageJson(packages) {
-  const json = await fs.readJsonSync('./package.json')
+function mergePackageJson(packages) {
+  const json = fs.readJsonSync('./package.json')
 
   json.scripts = Object.assign({}, json.scripts, packages.scripts)
   json.dependencies = Object.assign({}, json.dependencies, packages.dependencies)
