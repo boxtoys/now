@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Quick start project.",
   "scripts": {
-    "dev": "npx zx ./scripts/build.mjs --env development && npx serve",
+    "dev": "npx zx ./scripts/build.mjs --env development && npx serve -p 8866",
     "build": "npx zx ./scripts/build.mjs --env production",
     "gen:profiles": "npx zx ./scripts/profiles.mjs",
     "prepare": "husky install"

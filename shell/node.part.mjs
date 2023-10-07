@@ -89,7 +89,7 @@ async function exists(dirName) {
 }
 
 async function mkdir(dirName) {
-  await $`mkdir ${dirName}`.nothrow()
+  await $`mkdir -p ${dirName}`.nothrow()
 }
 
 async function cp(fileName) {

@@ -14,6 +14,7 @@ Quick start project.
 | ------------- | ------------------------------------------- |
 | Node          | [Link](https://github.com/boxtoys/now#node) |
 | Vue           | [Link](https://github.com/boxtoys/now#vue)  |
+| Nuxt          | [Link](https://github.com/boxtoys/now#nuxt) |
 
 ## Usage
 
@@ -40,6 +41,14 @@ Use the following script to quickly create a **Vue** or **Vue Library** project.
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://now.box.toys/bin/vue.part)"
+```
+
+### Nuxt
+
+Use the following script to quickly create a **Nuxt** project.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://now.box.toys/bin/nuxt)"
 ```
 
 ## How to use VSCode Profiles Configuration

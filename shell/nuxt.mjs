@@ -1,7 +1,7 @@
 #!/usr/bin/env zx
 
 const HOST = 'https://now.box.toys'
-const BASE_URL = `${HOST}/templates/vue`
+const BASE_URL = `${HOST}/templates/nuxt`
 
 getProjectName()
 .then(checkDirectoryExists)
@@ -31,7 +31,7 @@ async function generateFiles(projectName) {
   await mkdir(projectName)
 
   await spinner('Generating files...', async () => {
-    await $`npm create vite@latest ${projectName} -- --template vue-ts`
+    await $`npx -y nuxi@latest init ${projectName} --no-install --no-gitInit --packageManager npm`
 
     await within(async () => {
       await cd(projectName)
@@ -41,39 +41,36 @@ async function generateFiles(projectName) {
       await cp('.husky/commit-msg')
 
       await mkdir('.vscode')
-      await $`rm .vscode/extensions.json`
       await cp('.vscode/profiles.code-profile')
 
-      await $`rm public/vite.svg`
+      await mkdir('assets/css')
+      await cp('assets/css/reset.css')
 
-      await mkdir('src/pages')
-      await cp('src/pages/home.vue')
-      await mkdir('src/router')
-      await cp('src/router/index.ts')
-      await cp('src/App.vue')
-      await cp('src/main.ts')
-      await cp('src/vite-env.d.ts')
-      await $`rm src/style.css`
-      await $`rm -rf src/assets`
-      await $`rm -rf src/components`
+      await mkdir('components')
+      await cp('components/HelloWorld.vue')
+
+      await mkdir('locales')
+      await cp('locales/en.json')
+      await cp('locales/fr.json')
+
+      await mkdir('pages')
+      await cp('pages/index.vue')
 
       await cp('_gitignore')
-      await cp('.browserslistrc')
       await cp('.commitlintrc')
-      await cp('.cz-config.js')
-      await cp('.czrc')
+      await cp('.cz-config.cjs')
       await cp('.env.development')
       await cp('.env.production')
       await cp('.eslintrc.cjs')
       await cp('.lintstagedrc')
       await cp('.prettierrc')
-      await cp('index._html')
+      await cp('i18n.config.ts')
+      await cp('nuxt.config.ts')
       await cp('package.json')
-      await cp('vite.config.ts')
       
+      await $`rm app.vue`
       await $`rm README.md`
       await $`mv _gitignore .gitignore`
-      await $`mv index._html index.html`
       await $`git init`
     })
   })
