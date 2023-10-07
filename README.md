@@ -10,11 +10,11 @@ Quick start project.
 
 ## Templates
 
-| Template Type | Usage                                       |
-| ------------- | ------------------------------------------- |
-| Node          | [Link](https://github.com/boxtoys/now#node) |
-| Vue           | [Link](https://github.com/boxtoys/now#vue)  |
-| Nuxt          | [Link](https://github.com/boxtoys/now#nuxt) |
+| Template Type | Usage         |
+| ------------- | ------------- |
+| Node          | [Link](#node) |
+| Vue           | [Link](#vue)  |
+| Nuxt          | [Link](#nuxt) |
 
 ## Usage
 
