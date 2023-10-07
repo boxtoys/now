@@ -44,17 +44,21 @@ async function generateFiles(projectName) {
       await cp('.vscode/profiles.code-profile')
 
       await cp('src/app.controller.spec.ts')
+      await cp('src/app.controller.ts')
+      await cp('src/app.module.ts')
       await cp('src/app.service.ts')
+      await cp('src/main.ts')
 
       await cp('test/app.e2e-spec.ts')
+      await cp('test/jest-e2e.json')
 
       await cp('_gitignore')
       await cp('.commitlintrc')
-      await cp('.cz-config.js')
-      await cp('.czrc')
-      await cp('.eslintrc.js')
+      await cp('.cz-config.cjs')
+      await cp('.eslintrc.cjs')
       await cp('.lintstagedrc')
       await cp('.prettierrc')
+      await cp('tsconfig.json')
 
       mergePackageJson({
         devDependencies: {
@@ -110,9 +114,23 @@ async function cp(fileName) {
 function mergePackageJson(packages) {
   const json = fs.readJsonSync('./package.json')
 
+  json.type = 'module'
+  
+  json.jest.moduleNameMapper = { "^(\\.{1,2}/.*)\\.js$": "$1" }
+  json.jest.transform["^.+\\.(t|j)s$"] = ["ts-jest", { "useESM": true }]
+
   json.scripts = Object.assign({}, json.scripts, packages.scripts)
   json.dependencies = Object.assign({}, json.dependencies, packages.dependencies)
   json.devDependencies = Object.assign({}, json.devDependencies, packages.devDependencies)
+
+  json.config = {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
+  }
   
   fs.writeJsonSync('./package.json', json, { spaces: 2 })
 }
