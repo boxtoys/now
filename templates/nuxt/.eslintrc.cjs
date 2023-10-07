@@ -1,10 +1,8 @@
 module.exports = {
   root: true,
-  plugins: ['prettier'],
-  extends: ['@nuxtjs/eslint-config-typescript', 'plugin:prettier/recommended'],
+  extends: ['@nuxtjs/eslint-config-typescript'],
   rules: {
-    'vue/component-tags-order': 'off',
-    'prettier/prettier': 'error'
+    'vue/component-tags-order': 'off'
   },
   ignorePatterns: [
     '/*.js',

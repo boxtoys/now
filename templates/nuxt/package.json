@@ -27,9 +27,7 @@
     "prettier": "^3.0.3",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
-    "@nuxtjs/eslint-module": "^4.1.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-config-prettier": "^9.0.0"
+    "@nuxtjs/eslint-module": "^4.1.0"
   },
   "config": {
     "commitizen": {

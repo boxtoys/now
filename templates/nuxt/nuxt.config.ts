@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     shim: false
   },
   modules: [
+    '@nuxtjs/eslint-module',
     [
       '@nuxtjs/i18n',
       {
