@@ -65,16 +65,48 @@ async function generateFiles(projectName) {
       await cp('_npmignore')
       await cp('.browserslistrc')
       await cp('.commitlintrc')
-      await cp('.cz-config.js')
-      await cp('.czrc')
+      await cp('.cz-config.cjs')
       await cp('.eslintrc.cjs')
       await cp('.lintstagedrc')
       await cp('.prettierrc')
       await cp('index._html')
-      await cp('package.json')
       await cp('tsconfig.types.json')
       await cp('vite.config.ts')
       await cp('vitest.config.ts')
+
+      await mergePackageJson({
+        devDependencies: {
+          "sass": "^1.68.0",
+          "husky": "^8.0.3",
+          "jsdom": "^22.1.0",
+          "vitest": "^0.34.6",
+          "eslint": "^8.50.0",
+          "prettier": "^3.0.3",
+          "commitizen": "^4.3.0",
+          "lint-staged": "^14.0.1",
+          "@types/node": "^20.8.2",
+          "@vue/test-utils": "^2.4.1",
+          "cz-customizable": "^7.0.0",
+          "@commitlint/cli": "^17.7.1",
+          "eslint-plugin-vue": "^9.17.0",
+          "@vitest/coverage-v8": "^0.34.6",
+          "@vitejs/plugin-vue-jsx": "^3.0.2",
+          "@rushstack/eslint-patch": "^1.5.1",
+          "@vue/eslint-config-prettier": "^8.0.0",
+          "@vue/eslint-config-typescript": "^12.0.0",
+          "@commitlint/config-conventional": "^17.7.0"
+        },
+        scripts: {
+          "test": "vitest",
+          "dev": "vite --host",
+          "commit": "npx git-cz",
+          "prepare": "husky install",
+          "preview": "vite preview --host",
+          "test:coverage": "vitest run --coverage",
+          "build": "vite build && npm run build:types",
+          "build:types": "vue-tsc --project tsconfig.types.json --declaration --emitDeclarationOnly --outDir types"
+        }
+      })
 
       await $`rm README.md`
       await $`mv _gitignore .gitignore`
@@ -111,4 +143,39 @@ async function mkdir(dirName) {
 
 async function cp(fileName) {
   await $`touch ${fileName} && chmod +x ${fileName} && curl -s ${BASE_URL}/${fileName} > ${fileName}`
+}
+
+async function mergePackageJson(packages) {
+  const json = await fs.readJsonSync('./package.json')
+
+  json.scripts = Object.assign({}, json.scripts, packages.scripts)
+  json.dependencies = Object.assign({}, json.dependencies, packages.dependencies)
+  json.devDependencies = Object.assign({}, json.devDependencies, packages.devDependencies)
+
+  json.scripts.preview = undefined
+  json.main = "./dist/index.cjs.js"
+  json.types = "./types/index.d.ts"
+  json.exports = {
+    ".": {
+      "import": {
+        "types": "./types/index.d.ts",
+        "default": "./dist/index.esm.mjs"
+      },
+      "require": {
+        "types": "./types/index.d.ts",
+        "default": "./dist/index.cjs.js"
+      }
+    }
+  }
+
+  json.config = {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
+  }
+
+  fs.writeJsonSync('./package.json', json, { spaces: 2 })
 }
