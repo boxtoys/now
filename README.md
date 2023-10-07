@@ -35,6 +35,8 @@ Use the following script to quickly create a **Node** or **Node Library** projec
 
 Use the following script to quickly create a **Vue** or **Vue Library** project.
 
+> :warning: It's recommended to [use take over mode instead of VSCode built-in TS plugin.](https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode)
+
 ```bash
 /bin/bash -c "$(curl -fsSL https://now.box.toys/bin/vue)"
 ```
@@ -46,6 +48,8 @@ Use the following script to quickly create a **Vue** or **Vue Library** project.
 ### Nuxt
 
 Use the following script to quickly create a **Nuxt** project.
+
+> :warning: It's recommended to [use take over mode instead of VSCode built-in TS plugin.](https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode)
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://now.box.toys/bin/nuxt)"
