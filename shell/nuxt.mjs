@@ -66,7 +66,32 @@ async function generateFiles(projectName) {
       await cp('.prettierrc')
       await cp('i18n.config.ts')
       await cp('nuxt.config.ts')
-      await cp('package.json')
+      // await cp('package.json')
+
+      mergePackageJson({
+        devDependencies: {
+          "sass": "^1.68.0",
+          "husky": "^8.0.3",
+          "eslint": "^8.50.0",
+          "prettier": "^3.0.3",
+          "commitizen": "^4.3.0",
+          "lint-staged": "^14.0.1",
+          "@types/node": "^20.8.2",
+          "cz-customizable": "^7.0.0",
+          "@commitlint/cli": "^17.7.1",
+          "@nuxtjs/i18n": "^8.0.0-rc.5",
+          "@nuxtjs/eslint-module": "^4.1.0",
+          "@commitlint/config-conventional": "^17.7.0",
+          "@nuxtjs/eslint-config-typescript": "^12.1.0"
+        },
+        scripts: {
+          "commit": "npx git-cz",
+          "prepare": "husky install",
+          "build": "nuxt build --dotenv .env.production",
+          "generate": "nuxt generate --dotenv .env.production",
+          "dev": "nuxt dev --host --no-qr --dotenv .env.development"
+        }
+      })
       
       await $`rm app.vue`
       await $`rm README.md`
@@ -86,7 +111,7 @@ async function printSuccessMessage(projectName) {
   echo``
   echo`  cd ${projectName}`
   echo`  npm i`
-  echo`  npm start`
+  echo`  npm run dev`
   echo``
 }
 
@@ -102,4 +127,22 @@ async function mkdir(dirName) {
 
 async function cp(fileName) {
   await $`touch ${fileName} && chmod +x ${fileName} && curl -s ${BASE_URL}/${fileName} > ${fileName}`
+}
+
+function mergePackageJson(packages) {
+  const json = fs.readJsonSync('./package.json')
+
+  json.scripts = Object.assign({}, json.scripts, packages.scripts)
+  json.devDependencies = Object.assign({}, json.devDependencies, packages.devDependencies)
+
+  json.config = {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
+  }
+
+  fs.writeJsonSync('./package.json', json, { spaces: 2 })
 }
