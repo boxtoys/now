@@ -77,6 +77,7 @@ async function generateFiles(projectName) {
       })
 
       await $`rm README.md`
+      await $`rm .eslintrc.js`
       await $`mv _gitignore .gitignore`
       await $`git init`
     })
