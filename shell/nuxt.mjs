@@ -66,7 +66,6 @@ async function generateFiles(projectName) {
       await cp('.prettierrc')
       await cp('i18n.config.ts')
       await cp('nuxt.config.ts')
-      // await cp('package.json')
 
       mergePackageJson({
         devDependencies: {
