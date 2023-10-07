@@ -15,6 +15,7 @@ Quick start project.
 | Node          | [Link](#node) |
 | Vue           | [Link](#vue)  |
 | Nuxt          | [Link](#nuxt) |
+| Nest          | [Link](#nest) |
 
 ## Usage
 
@@ -53,6 +54,14 @@ Use the following script to quickly create a **Nuxt** project.
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://now.box.toys/bin/nuxt)"
+```
+
+### Nest
+
+Use the following script to quickly create a **Nest** project.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://now.box.toys/bin/nest)"
 ```
 
 ## How to use VSCode Profiles Configuration
