@@ -22,8 +22,3 @@ function buttonClick() {
   alert('oops.')
 }
 </script>
-<script lang="ts">
-export default {
-  name: 'HomePage'
-}
-</script>
