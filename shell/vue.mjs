@@ -97,6 +97,8 @@ async function generateFiles(projectName) {
           "preview": "vite preview --host"
         }
       })
+
+      patchTsConfigJSON()
       
       await $`rm README.md`
       await $`mv _gitignore .gitignore`
@@ -151,4 +153,18 @@ function patchPackageJson(packages) {
   }
 
   fs.writeJsonSync('./package.json', json, { spaces: 2 })
+}
+
+function patchTsConfigJSON() {
+  let json = fs.readFileSync('./tsconfig.json', 'utf-8')
+  json = JSON.parse(json.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, ''))
+
+  json.compilerOptions = Object.assign({}, json.compilerOptions, {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  })
+
+  fs.writeJsonSync('./tsconfig.json', json, { spaces: 2 })
 }
