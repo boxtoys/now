@@ -69,7 +69,7 @@ async function generateFiles(projectName) {
       await cp('index._html')
       await cp('vite.config.ts')
 
-      mergePackageJson({
+      patchPackageJson({
         dependencies: {
           "vue-router": "^4.2.5"
         },
@@ -134,7 +134,7 @@ async function cp(fileName) {
   await $`touch ${fileName} && chmod +x ${fileName} && curl -s ${BASE_URL}/${fileName} > ${fileName}`
 }
 
-function mergePackageJson(packages) {
+function patchPackageJson(packages) {
   const json = fs.readJsonSync('./package.json')
 
   json.scripts = Object.assign({}, json.scripts, packages.scripts)

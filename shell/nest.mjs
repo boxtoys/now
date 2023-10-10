@@ -60,7 +60,7 @@ async function generateFiles(projectName) {
       await cp('.prettierrc')
       await cp('tsconfig.json')
 
-      mergePackageJson({
+      patchPackageJson({
         devDependencies: {
           "husky": "^8.0.3",
           "prettier": "^3.0.3",
@@ -112,7 +112,7 @@ async function cp(fileName) {
   await $`touch ${fileName} && chmod +x ${fileName} && curl -s ${BASE_URL}/${fileName} > ${fileName}`
 }
 
-function mergePackageJson(packages) {
+function patchPackageJson(packages) {
   const json = fs.readJsonSync('./package.json')
 
   json.type = 'module'

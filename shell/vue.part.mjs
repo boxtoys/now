@@ -74,7 +74,7 @@ async function generateFiles(projectName) {
       await cp('vite.config.ts')
       await cp('vitest.config.ts')
 
-      mergePackageJson({
+      patchPackageJson({
         devDependencies: {
           "sass": "^1.68.0",
           "husky": "^8.0.3",
@@ -145,7 +145,7 @@ async function cp(fileName) {
   await $`touch ${fileName} && chmod +x ${fileName} && curl -s ${BASE_URL}/${fileName} > ${fileName}`
 }
 
-function mergePackageJson(packages) {
+function patchPackageJson(packages) {
   const json = fs.readJsonSync('./package.json')
 
   json.scripts = Object.assign({}, json.scripts, packages.scripts)
