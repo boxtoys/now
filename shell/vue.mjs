@@ -10,6 +10,12 @@ getProjectName()
 .catch(reason => echo(reason))
 
 async function getProjectName() {
+  const projectName = normalize(argv.projectName)
+
+  if (projectName) {
+    return projectName
+  }
+  
   const result = await question('Project name: ')
 
   if (!result.trim()) {
@@ -120,6 +126,10 @@ async function printSuccessMessage(projectName) {
   echo`  npm i`
   echo`  npm run dev`
   echo``
+}
+
+function normalize(projectName) {
+  return projectName ? projectName.toString().trim().replace('/bin/bash', '') : ''
 }
 
 async function exists(dirName) {

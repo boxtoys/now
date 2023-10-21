@@ -20,4 +20,4 @@ then
 fi
 
 # execute generated script
-npx -y zx --quiet https://now.box.toys/shell/nest.mjs
+npx -y zx --quiet https://now.box.toys/shell/nest.mjs --projectName "$0"

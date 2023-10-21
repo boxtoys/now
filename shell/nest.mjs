@@ -10,6 +10,12 @@ getProjectName()
 .catch(reason => echo(reason))
 
 async function getProjectName() {
+  const projectName = normalize(argv.projectName)
+
+  if (projectName) {
+    return projectName
+  }
+
   const result = await question('Project name: ')
 
   if (!result.trim()) {
@@ -102,6 +108,10 @@ async function exists(dirName) {
   const pwd = await $`pwd`
   
   return fs.existsSync(path.join(pwd.stdout.replace('\n', ''), dirName))
+}
+
+function normalize(projectName) {
+  return projectName ? projectName.toString().trim().replace('/bin/bash', '') : ''
 }
 
 async function mkdir(dirName) {

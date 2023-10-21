@@ -20,4 +20,4 @@ then
 fi
 
 # execute generated script
-npx -y zx --quiet https://now.box.toys/shell/nuxt.mjs
+npx -y zx --quiet https://now.box.toys/shell/nuxt.mjs --projectName "$0"
