@@ -13,7 +13,6 @@ npm-debug.log*
 .npm
 
 # -- VSCode --
-/.vscode
 jsconfig.json
 
 # -- IDEA --
