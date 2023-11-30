@@ -13,7 +13,7 @@ async function getProjectName() {
   const projectName = normalize(argv.projectName)
 
   if (projectName) {
-    return projectName
+    return projectName.toLowerCase()
   }
   
   const result = await question('Project name: ')
@@ -21,7 +21,7 @@ async function getProjectName() {
   if (!result.trim()) {
     throw new Error('Project name is required.')
   } else {
-    return result
+    return result.toLowerCase()
   }
 }
 
@@ -175,6 +175,7 @@ function patchTsConfigJSON() {
       "@/*": ["src/*"]
     }
   })
+  json.include = ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 
   fs.writeJsonSync('./tsconfig.json', json, { spaces: 2 })
 }
