@@ -13,11 +13,11 @@ export default defineConfig({
   output: [{
     format: 'cjs',
     sourcemap: true,
-    file: './dist/index.cjs.js'
+    file: './dist/index.cjs'
   }, {
     format: 'es',
     sourcemap: true,
-    file: './dist/index.esm.mjs'
+    file: './dist/index.js'
   }],
   plugins: [
     clean({ targets: ['dist/*', 'types/*'] }),
