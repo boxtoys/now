@@ -72,8 +72,12 @@ async function generateFiles(projectName) {
       await cp('.prettierrc')
       await cp('i18n.config.ts')
       await cp('nuxt.config.ts')
+      await cp('.npmrc')
 
       patchPackageJson({
+        engines: {
+          node: ">=18.0.0"
+        },
         devDependencies: {
           "sass": "^1.68.0",
           "husky": "^8.0.3",

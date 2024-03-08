@@ -9,6 +9,6 @@
 
 <template>
   <div class="section">
-    <HelloWorld></HelloWorld>
+    <HelloWorld />
   </div>
 </template>
