@@ -96,6 +96,7 @@ async function generateFiles(projectName) {
           "eslint-plugin-vue": "^9.17.0",
           "@vitejs/plugin-vue-jsx": "^3.0.2",
           "@rushstack/eslint-patch": "^1.5.1",
+          "vite-plugin-vue-devtools": "^7.0.16",
           "@vue/eslint-config-prettier": "^8.0.0",
           "@vue/eslint-config-typescript": "^12.0.0",
           "@commitlint/config-conventional": "^17.7.0"
