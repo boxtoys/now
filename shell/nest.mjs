@@ -65,8 +65,12 @@ async function generateFiles(projectName) {
       await cp('.lintstagedrc')
       await cp('.prettierrc')
       await cp('tsconfig.json')
+      await cp('.npmrc')
 
       patchPackageJson({
+        engines: {
+          node: ">=18.0.0"
+        },
         devDependencies: {
           "husky": "^8.0.3",
           "prettier": "^3.0.3",
