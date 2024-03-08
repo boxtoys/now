@@ -79,8 +79,12 @@ async function generateFiles(projectName) {
       await cp('tsconfig.types.json')
       await cp('vite.config.ts')
       await cp('vitest.config.ts')
+      await cp('.npmrc')
 
       patchPackageJson({
+        engines: {
+          node: ">=18.0.0"
+        },
         devDependencies: {
           "sass": "^1.68.0",
           "husky": "^8.0.3",
