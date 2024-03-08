@@ -74,8 +74,12 @@ async function generateFiles(projectName) {
       await cp('.prettierrc')
       await cp('index._html')
       await cp('vite.config.ts')
+      await cp('.npmrc')
 
       patchPackageJson({
+        engines: {
+          node: ">=18.0.0"
+        },
         dependencies: {
           "vue-router": "^4.2.5"
         },
