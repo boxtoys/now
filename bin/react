@@ -1,0 +1,30 @@
+#!/bin/bash
+
+NODE_INSTALLED=0
+MIN_NODE_VERSION=16
+
+# check node & npm installed
+if command -v node >/dev/null 2>&1 && command -v npm >/dev/null 2>&1 ; then
+  NODE_VERSION=$(node --version | cut -d. -f1 | tr -d 'v')
+  if [ "$NODE_VERSION" -ge "$MIN_NODE_VERSION" ]; then
+    NODE_INSTALLED=1
+  else
+    echo "Node version is too low, please upgrade to version v${MIN_NODE_VERSION} or higher."
+    exit 1
+  fi
+fi
+
+if [ ${NODE_INSTALLED} == 0 ]
+then
+  # download latest nodejs package
+  curl "https://nodejs.org/dist/latest/node-${VERSION:-$(curl -sS https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg"
+
+  # install nodejs package
+  sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target /
+
+  # clean pkg file
+  rm $HOME/Downloads/node-latest.pkg
+fi
+
+# execute generated script
+npx -y zx --quiet https://now.box.toys/shell/react.mjs --projectName "$0"

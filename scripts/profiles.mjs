@@ -1,9 +1,15 @@
 #!/usr/bin/env zx
 
 const profiles = {
-  name: 'Node',
+  name: 'React',
   settings: JSON.stringify({
     settings: JSON.stringify({
+      "files.associations": {
+        "*.css": "tailwindcss"
+      },
+      "editor.quickSuggestions": {
+        "strings": "on"
+      },
       "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
@@ -16,7 +22,7 @@ const profiles = {
       "[typescript]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
-      "[vue]": {
+      "[react]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       }
     })
@@ -46,28 +52,16 @@ const profiles = {
       uuid: '532533c9-a894-4a58-9eee-bbfbe7c06f71'
     }
   }, {
-    displayName: 'Vue Language Features (Volar)',
-    identifier: {
-      id: 'vue.volar',
-      uuid: 'a5223b43-8621-4351-a14e-3d560f85f277'
-    }
-  }, {
-    displayName: 'TypeScript Vue Plugin (Volar)',
-    identifier: {
-      id: 'vue.vscode-typescript-vue-plugin',
-      uuid: '78d16c76-388b-44e4-8470-6790d6c3d2d1'
-    }
-  }, {
     displayName: 'GitLens — Git supercharged',
     identifier: {
       id: 'eamodio.gitlens',
       uuid: '4de763bd-505d-4978-9575-2b7696ecf94e'
     }
   }, {
-    displayName: 'i18n Ally',
+    displayName: 'Tailwind CSS IntelliSense',
     identifier: {
-      id: 'lokalise.i18n-ally',
-      uuid: '8ab81d13-c812-4a2f-8f19-c32e3655e53c'
+      id: 'bradlc.vscode-tailwindcss',
+      uuid: '4db62a7c-7d70-419c-96d2-6c3a4dc77ea5'
     }
   }]
 }
