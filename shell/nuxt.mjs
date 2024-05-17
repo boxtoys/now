@@ -145,6 +145,7 @@ async function cp(fileName) {
 function patchPackageJson(packages) {
   const json = fs.readJsonSync('./package.json')
 
+  json.engines = Object.assign({}, json.engines, packages.engines)
   json.scripts = Object.assign({}, json.scripts, packages.scripts)
   json.devDependencies = Object.assign({}, json.devDependencies, packages.devDependencies)
 

@@ -134,6 +134,7 @@ function patchPackageJson(packages) {
   json.jest.moduleNameMapper = { "^(\\.{1,2}/.*)\\.js$": "$1" }
   json.jest.transform["^.+\\.(t|j)s$"] = ["ts-jest", { "useESM": true }]
 
+  json.engines = Object.assign({}, json.engines, packages.engines)
   json.scripts = Object.assign({}, json.scripts, packages.scripts)
   json.dependencies = Object.assign({}, json.dependencies, packages.dependencies)
   json.devDependencies = Object.assign({}, json.devDependencies, packages.devDependencies)
