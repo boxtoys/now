@@ -44,6 +44,14 @@ Use the following script to quickly create a **Vue** or **Vue Library** project.
 /bin/bash -c "$(curl -fsSL https://now.box.toys/bin/vue.part)"
 ```
 
+### React
+
+Use the following script to quickly create a **React** project.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://now.box.toys/bin/react)"
+```
+
 ### Nuxt
 
 Use the following script to quickly create a **Nuxt** project.
