@@ -4,9 +4,6 @@ const profiles = {
   name: 'React',
   settings: JSON.stringify({
     settings: JSON.stringify({
-      "files.associations": {
-        "*.css": "tailwindcss"
-      },
       "editor.quickSuggestions": {
         "strings": "on"
       },
@@ -56,12 +53,6 @@ const profiles = {
     identifier: {
       id: 'eamodio.gitlens',
       uuid: '4de763bd-505d-4978-9575-2b7696ecf94e'
-    }
-  }, {
-    displayName: 'Tailwind CSS IntelliSense',
-    identifier: {
-      id: 'bradlc.vscode-tailwindcss',
-      uuid: '4db62a7c-7d70-419c-96d2-6c3a4dc77ea5'
     }
   }]
 }

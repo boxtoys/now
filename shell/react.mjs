@@ -56,12 +56,12 @@ async function generateFiles(projectName) {
       await cp('src/components/LoadingOrError.tsx')
       await cp('src/components/Title.tsx')
       await mkdir('src/pages')
+      await cp('src/pages/Home.module.scss')
       await cp('src/pages/Home.tsx')
       await mkdir('src/router')
       await cp('src/router/index.tsx')
       await cp('src/router/map.ts')
       await cp('src/App.tsx')
-      await cp('src/main.css')
       await cp('src/main.tsx')
       
       await $`rm -rf src/App.css`
@@ -76,7 +76,6 @@ async function generateFiles(projectName) {
       await cp('.prettierrc')
       await cp('index._html')
       await cp('postcss.config.cjs')
-      await cp('tailwind.config.js')
       await cp('vite.config.ts')
       await cp('.npmrc')
       await cp('.nvmrc')
@@ -104,9 +103,7 @@ async function generateFiles(projectName) {
           "lint-staged": "^15.2.2",
           "postcss": "^8.4.38",
           "prettier": "3.2.5",
-          "prettier-plugin-tailwindcss": "^0.5.14",
           "sass": "^1.77.2",
-          "tailwindcss": "^3.4.3",
           "vite-tsconfig-paths": "^4.3.2"
         },
         scripts: {
