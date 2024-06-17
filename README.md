@@ -6,7 +6,6 @@ Quick start project.
 
 - Support for popular technology stacks.
 - Configuration presets based on best practice.
-- Support for VSCode Profiles Configuration. Import `.vscode/profiles.code-profile` and you're done!
 
 ## Templates
 
@@ -14,6 +13,7 @@ Quick start project.
 | ------------- | ------------- |
 | Node          | [Link](#node) |
 | Vue           | [Link](#vue)  |
+| React         | [Link](#React)|
 | Nuxt          | [Link](#nuxt) |
 | Nest          | [Link](#nest) |
 
@@ -67,12 +67,6 @@ Use the following script to quickly create a **Nest** project.
 ```bash
 /bin/bash -c "$(curl -fsSL https://now.box.toys/bin/nest)"
 ```
-
-## How to use VSCode Profiles Configuration
-
-1. Copy `.vscode/profiles.code-profile` file path.
-2. Open VSCode **Profiles -> Import Profile -> Paste file path**.
-3. Select the profile you want to use.
 
 ## License
 

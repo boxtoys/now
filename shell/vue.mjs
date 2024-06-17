@@ -46,10 +46,6 @@ async function generateFiles(projectName) {
       await cp('.husky/pre-commit')
       await cp('.husky/commit-msg')
 
-      await mkdir('.vscode')
-      await $`rm .vscode/extensions.json`
-      await cp('.vscode/profiles.code-profile')
-
       await $`rm public/vite.svg`
 
       await mkdir('src/pages')

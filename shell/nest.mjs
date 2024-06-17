@@ -46,9 +46,6 @@ async function generateFiles(projectName) {
       await cp('.husky/pre-commit')
       await cp('.husky/commit-msg')
 
-      await mkdir('.vscode')
-      await cp('.vscode/profiles.code-profile')
-
       await cp('src/app.controller.spec.ts')
       await cp('src/app.controller.ts')
       await cp('src/app.module.ts')
