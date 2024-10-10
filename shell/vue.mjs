@@ -168,7 +168,7 @@ function patchPackageJson(packages) {
 }
 
 function patchTsConfigJSON() {
-  let json = fs.readFileSync('./tsconfig.json', 'utf-8')
+  let json = fs.readFileSync('./tsconfig.app.json', 'utf-8')
   json = JSON.parse(json.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, ''))
 
   json.compilerOptions = Object.assign({}, json.compilerOptions, {
