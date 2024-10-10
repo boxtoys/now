@@ -179,5 +179,5 @@ function patchTsConfigJSON() {
   })
   json.include = ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 
-  fs.writeJsonSync('./tsconfig.json', json, { spaces: 2 })
+  fs.writeJsonSync('./tsconfig.app.json', json, { spaces: 2 })
 }
